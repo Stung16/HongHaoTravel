@@ -37,9 +37,11 @@ const Banner = () => {
         mapRef.current,
         {
           x: 300,
+          y: 0,
         },
         {
-          x: -10,
+          x: -20,
+          y: -60,
           duration: 1,
           ease: "power1.inOut",
         }
@@ -61,59 +63,45 @@ const Banner = () => {
           y: -80,
         }
       )
-    // .fromTo(
-    //   ref.current,
-    //   {
-    //     opacity: 0,
-    //     backgroundImage: "url('/images/banner.png')",
-    //   },
-    //   {
-    //     duration: 0.5,
-    //     opacity: 1,
-    //     backgroundImage: "url('/images/map2.png')",
-    //   }
-    // )
-    // .to(bgrootRef.current, {
-    //   duration: 1.5,
-    //   backgroundImage: "url('/images/map2.png')",
-    // })
-    // .fromTo(
-    //   locationRef.current,
-    //   {
-    //     x: 40,
-    //     y: -80,
-    //   },
-    //   {
-    //     duration: 0.4,
-    //     x: 50,
-    //     y: -70,
-    //   }
-    // )
-    // .fromTo(
-    //   ref.current,
-    //   {
-    //     opacity: 0,
-    //     backgroundImage: "url('/images/banner.png')",
-    //   },
-    //   {
-    //     duration: 0.5,
-    //     opacity: 1,
-    //     backgroundImage: "url('/images/map3.png')",
-    //   }
-    // )
-    // .fromTo(
-    //   locationRef.current,
-    //   {
-    //     x: 50,
-    //     y: -70,
-    //   },
-    //   {
-    //     delay: 1,
-    //     duration: 0.4,
-    //     x: 40,
-    //     y: 20,
-    //   }
-    // )
+      .fromTo(
+        locationRef.current,
+        {
+          x: 40,
+          y: -80,
+        },
+        {
+          delay: 0.4,
+          duration: 0.4,
+          x: 70,
+          y: -70,
+        }
+      )
+      .fromTo(
+        locationRef.current,
+        {
+          x: 70,
+          y: -70,
+        },
+        {
+          delay: 0.4,
+          duration: 0.4,
+          x: 40,
+          y: 20,
+        }
+      )
+      .fromTo(
+        locationRef.current,
+        {
+          x: 40,
+          y: 20,
+        },
+        {
+          delay: 0.4,
+          duration: 0.4,
+          x: 40,
+          y: -80,
+        }
+      );
   });
   return (
     <div

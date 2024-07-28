@@ -584,13 +584,7 @@
   }
 }
 
-.bg-Hgbeauty {
-  background-image: url("images/bg_sectionInfor.jpg");
-  background-size: cover;
-  position: absolute;
-  border-radius: 10px;
-  bottom: 0;
-}
+
 #motionPath {
   overflow: visible;
   height: 100%;
