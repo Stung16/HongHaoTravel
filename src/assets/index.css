@@ -224,6 +224,9 @@
   left: 3.5rem;
   transition: all 0.1s linear;
 }
+.itemMenu > div > a.active {
+  transform: translateX(17px);
+}
 .itemMenu > div:hover .arrowDown {
   transition-delay: 0.05s;
   opacity: 0;
@@ -236,7 +239,9 @@
   opacity: 0;
   transition: all 0.3s ease-in;
 }
-
+.itemMenu > div .arrowRight.active {
+  opacity: 1;
+}
 .itemMenu > div:hover .arrowRight {
   opacity: 1;
 }

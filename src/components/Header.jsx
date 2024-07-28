@@ -3,6 +3,7 @@
 // import { useEffect, useRef, useState } from "react";
 import { FaBars } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Logo from "./Logo";
 import { DialogTitle, DialogClose } from "@radix-ui/react-dialog";
@@ -55,36 +56,53 @@ const Header = ({ isHeaderActive }) => {
                   </div>
                 </li>
                 <li
-                  className={`itemMenu overflow-hidden h-10  ${
+                  className={`itemMenu overflow-hidden h-10 flex-col justify-start !items-start  ${
                     active && "h-36"
                   }`}
                   onClick={() => setActive(!active)}
                 >
                   <div className="flex items-center flex-col">
-                    <ArrowRight cl={"left-0 translate-y-[15px]"} />
-                    <a href="#" className="flex items-center gap-1">
-                      Tours
-                    </a>
-                    <IoIosArrowDown
-                      fontSize={12}
-                      className="arrowDown translate-y-[15px]"
+                    <ArrowRight
+                      cl={"left-0 translate-y-[15px]"}
+                      active={active}
                     />
-                    <ul
-                      className={`cursor-pointer ${
-                        !active && "hidden"
-                      } flex flex-col gap-2`}
+                    <a
+                      href="#"
+                      className={`flex items-center justify-center gap-1 ${
+                        active && "active"
+                      }`}
                     >
-                      <li className="itemMenu w-full text-xl text-white not-italic font-medium leading-[120%]">
-                        Best Budget
-                      </li>
-                      <li className="itemMenu w-full opacity-80 text-xl text-white not-italic font-medium leading-[120%]">
-                        Standard
-                      </li>
-                      <li className="itemMenu w-full opacity-80 text-xl text-white not-italic font-medium leading-[120%]">
-                        Premium
-                      </li>
-                    </ul>
+                      Tours
+                      {active ? (
+                        <IoIosArrowUp
+                          fontSize={12}
+                          className={`translate-y-[3px]`}
+                        />
+                      ) : (
+                        <IoIosArrowDown
+                          fontSize={12}
+                          className={`translate-y-[3px]`}
+                        />
+                      )}
+                    </a>
                   </div>
+                    <div>
+                      <ul
+                        className={`cursor-pointer ${
+                          active ? "h-full" : 'h-0'
+                        } flex flex-col gap-2 ml-5`}
+                      >
+                        <li className="itemMenu w-full text-xl text-white not-italic font-medium leading-[120%]">
+                          Best Budget
+                        </li>
+                        <li className="itemMenu w-full opacity-70 text-xl text-white not-italic font-medium leading-[120%]">
+                          Standard
+                        </li>
+                        <li className="itemMenu w-full opacity-70 text-xl text-white not-italic font-medium leading-[120%]">
+                          Premium
+                        </li>
+                      </ul>
+                    </div>
                 </li>
                 <li className="itemMenu">
                   <div className="flex items-center">

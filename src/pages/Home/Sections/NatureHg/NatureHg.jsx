@@ -122,7 +122,7 @@ const NatureHg = () => {
     >
       {/* video slide */}
       <div
-        className={`bg-[url('/images/bg_sectionInfor.jpg')] bottom-0 rounded-[10px] absolute bg-cover  sm:pointer-events-none lg:pointer-events-auto h-[26vh] w-[80vw] sm:h-[30vh] sm:w-[70vw] md:h-[40vh] md:w-[50vw] `}
+        className={`bg-[url('/images/bg_sectionInfor.jpg')] bottom-6 rounded-[10px] absolute bg-cover  sm:pointer-events-none lg:pointer-events-auto h-[26vh] w-[80vw] sm:h-[30vh] sm:w-[70vw] md:h-[40vh] md:w-[50vw] `}
         ref={ref}
         onMouseEnter={() => {
           debouncedHandleMouseEnter();
