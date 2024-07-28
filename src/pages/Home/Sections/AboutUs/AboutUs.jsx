@@ -1,5 +1,4 @@
 import CircleAnimation from "@/components/animations/CircleAnimation";
-// import React from "react";
 
 const AboutUs = () => {
   return (

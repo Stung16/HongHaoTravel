@@ -1,5 +1,3 @@
-// import React from 'react'
-
 import Banner from "./Sections/Banner/Banner"
 import Information from "./Sections/Information/Information"
 

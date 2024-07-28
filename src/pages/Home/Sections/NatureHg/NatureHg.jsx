@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);

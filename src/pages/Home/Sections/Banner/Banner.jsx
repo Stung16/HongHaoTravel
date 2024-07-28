@@ -1,5 +1,3 @@
-// import React from 'react'
-
 import BoxItemSell from "@/components/BoxItemSell";
 import Cta from "@/components/Cta";
 import gsap from "gsap";
