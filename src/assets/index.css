@@ -1,0 +1,663 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Trip Sans font */
+@font-face {
+  font-family: Trip Sans;
+  src: url(../fonts/trip-sans-medium.otf);
+}
+@font-face {
+  font-family: Trip Sans;
+  src: url(../fonts/trip-sans-bold.otf);
+}
+
+@font-face {
+  font-family: Trip Sans;
+  src: url(../fonts/trip-sans-mono-regular.otf);
+}
+
+@font-face {
+  font-family: Trip Sans;
+  src: url(../fonts/trip-sans-ultra.otf);
+}
+@font-face {
+  font-family: Trip Sans;
+  src: url(../fonts/trip-sans-variable.ttf);
+}
+
+@font-face {
+  font-family: Trip Sans;
+  src: url(../fonts/trip-sans.otf);
+}
+
+/* HavanaSunsetScript font */
+@font-face {
+  font-family: HavanaSunsetScript;
+  src: url(../fonts/havana-sunset-sans-outline.ttf);
+}
+@font-face {
+  font-family: HavanaSunsetScript;
+  src: url(../fonts/havana-sunset-script-alt.ttf);
+}
+
+@font-face {
+  font-family: HavanaSunsetScript;
+  src: url(../fonts/havana-sunset-script.ttf);
+}
+
+@font-face {
+  font-family: HavanaSunsetScript;
+  src: url(../fonts/havanasunsetsansfilled-havana.ttf);
+}
+
+/* HavanaSunsetScript font */
+@font-face {
+  font-family: Neumartha;
+  src: url(../fonts/Neumartha-ax9nK.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+/* html {
+  font-size: 62.5%;
+  font-size: 16px;
+} */
+
+.scrollbar-hide::-webkit-scrollbar {
+  background: transparent;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  background: transparent;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --color: hsl(0, 0%, 87%);
+  --animation: 2s ease-in-out infinite;
+}
+
+.loader .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border: solid 2px #dddddd5b;
+  border-radius: 50%;
+  margin: 0 10px;
+  animation: circle-keys var(--animation);
+}
+
+.loader .circle .outline {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  animation: outline-keys var(--animation);
+}
+
+.circle .outline {
+  animation-delay: 0.9s;
+}
+
+.circle:nth-child(5) .outline {
+  animation-delay: 2.1s;
+}
+
+@keyframes circle-keys {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes dot-keys {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes outline-keys {
+  0% {
+    transform: scale(0);
+    outline: solid 20px var(--color);
+    outline-offset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    outline: solid 0 transparent;
+    outline-offset: 20px;
+    opacity: 0;
+  }
+}
+
+.ripple-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: ripple 1.5s infinite;
+}
+.bgMenu {
+  background-image: url("/images/bannerMenun.png");
+  background-size: cover;
+}
+.menuBarbg {
+  background: linear-gradient(
+      to bottom,
+      rgb(15, 26, 18) 0%,
+      rgba(15, 26, 18, 0.863) 25%,
+      rgba(56, 77, 62, 0.904) 50%,
+      rgba(15, 26, 18, 0.938) 85%,
+      rgb(15, 26, 18) 100%
+    ),
+    url("/images/bannerMenu.png");
+  background-size: cover;
+  /* background-position: 100px 20px; */
+}
+.itemMenu {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dddddd8a;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+.itemMenu:last-child {
+  border: none;
+}
+.itemMenu > div > a {
+  padding: 0.3rem 0;
+  color: #fff;
+  text-align: center;
+  font-family: "Trip Sans";
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 700;
+  transition: transform 0.2s linear;
+}
+.itemMenu > div .arrowDown {
+  position: absolute;
+  opacity: 1;
+  left: 3.5rem;
+  transition: all 0.1s linear;
+}
+.itemMenu > div:hover .arrowDown {
+  transition-delay: 0.05s;
+  opacity: 0;
+}
+.itemMenu > div:hover > a {
+  transform: translateX(17px);
+}
+.itemMenu > div .arrowRight {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+
+.itemMenu > div:hover .arrowRight {
+  opacity: 1;
+}
+/* .mountain{
+  background-image: url();
+} */
+.bg_logo_HG {
+  width: 110px;
+  height: 112px;
+  z-index: 1;
+  background-image: url(/images/MapHG.png);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  --s: 9px;
+  width: 8.5rem;
+  height: 8.5rem;
+  background: transparent;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 3px dotted #ffffffc4;
+  transition: scale 0.1s linear;
+  animation: spinner-ehcge9 3.5s infinite linear;
+  /* clip-path: polygon(0 0,calc(50% - var(--s)) 0,50% var(--s),calc(50% + var(--s)) 0,100% 0,100% calc(50% - var(--s)),calc(100% - var(--s)) 50%,100% calc(50% + var(--s)),100% 100%,calc(50% + var(--s)) 100%, 50% calc(100% - var(--s)),calc(50% - var(--s)) 100%,0 100%,0 calc(50% + var(--s)), var(--s) 50%, 0 calc(50% - var(--s))); */
+}
+.boxx:hover .spinner {
+  scale: 1.1;
+  animation-play-state: paused;
+  background: #e64827;
+}
+
+@keyframes spinner-ehcge9 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.button-icon {
+  display: flex;
+  width: fit-content;
+  position: absolute;
+  height: fit-content;
+  cursor: pointer;
+  transform: translateY(-10px);
+}
+.cube {
+  transition: all 0.2s;
+  transform-style: preserve-3d;
+  width: 116px;
+  height: 20px;
+}
+
+.boxx:hover .cube {
+  transform: rotateX(90deg);
+}
+
+.side {
+  position: absolute;
+  height: 47px;
+  width: 116px;
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.top {
+  background: transparent;
+  color: #fff;
+  transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+}
+
+.front {
+  background: transparent;
+  color: #fff;
+  transform: translate3d(0, 0, 1em);
+}
+.Hg_beauty {
+  /* position: relative; */
+  height: 100%;
+  width: 100vw;
+  /* z-index: 50; */
+  background: linear-gradient(
+      to bottom,
+      rgb(18, 39, 24) 0%,
+      rgba(12, 21, 14, 0.9) 25%,
+      rgba(18, 39, 24, 0.859) 50%,
+      rgba(18, 39, 24, 0.627) 75%,
+      rgba(18, 39, 24, 0.474) 100%
+    ),
+    url("/images/bg_sectionInfor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cloundHg {
+  z-index: 10;
+  width: 100%;
+  height: auto;
+  left: 0;
+  position: relative;
+  width: 45rem;
+  flex-shrink: 0;
+  height: 27rem;
+  background-image: url(/images/animateCloudHg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.clound1 {
+  position: absolute;
+  z-index: 10;
+  width: 28.02056rem;
+  height: 11.87025rem;
+  /* margin-top: 150px; */
+  translate: -150px 160px;
+  transform: rotate(0.482deg);
+  flex-shrink: 0;
+  /* left: 0; */
+  background-image: url(/images/clound1.png);
+  background-size: contain;
+  animation: animateClound1 4s ease-in-out infinite;
+}
+.clound2 {
+  position: absolute;
+  width: 14.625rem;
+  height: 14.0625rem;
+  transform: rotate(27.145deg);
+  flex-shrink: 0;
+  translate: -10px 30px;
+  z-index: 10;
+  background-image: url(/images/clound2.png);
+  background-size: contain;
+  animation: animateClound2 4s ease-in-out infinite;
+}
+.clound3 {
+  position: absolute;
+  width: 19.1875rem;
+  height: 14.0625rem;
+  background-size: contain;
+  flex-shrink: 0;
+  translate: 100px -40px;
+  z-index: 10;
+  left: 0;
+  background-image: url(/images/clound3.png);
+  animation: animateClound3 4s ease-in-out infinite;
+}
+.clound4 {
+  position: absolute;
+  z-index: 10;
+  width: 14.625rem;
+  translate: 400px -50px;
+  background-size: contain;
+  height: 14.0625rem;
+  transform: rotate(27.145deg);
+  flex-shrink: 0;
+  left: 0;
+  background-image: url(/images/clound4.png);
+  animation: animateClound4 4s ease-in-out infinite;
+}
+.clound5 {
+  position: absolute;
+  z-index: 10;
+  width: 17.375rem;
+  translate: 500px 100px;
+  background-size: contain;
+  height: 7.3125rem;
+  flex-shrink: 0;
+  left: 0;
+  background-image: url(/images/clound5.png);
+  animation: animateClound5 4s ease-in-out infinite;
+}
+@keyframes animateClound1 {
+  0% {
+    translate: -150px 160px;
+  }
+
+  20% {
+    translate: -151px 160px;
+  }
+
+  30% {
+    translate: -152px 160px;
+  }
+
+  40% {
+    translate: -153px 160px;
+  }
+
+  50% {
+    translate: -154px 160px;
+  }
+
+  60% {
+    translate: -155px 160px;
+  }
+
+  70% {
+    translate: -154px 160px;
+  }
+
+  80% {
+    translate: -153px 160px;
+  }
+
+  90% {
+    translate: -152px 160px;
+  }
+
+  100% {
+    translate: -151px 160px;
+  }
+}
+@keyframes animateClound2 {
+  0% {
+    translate: -10px 30px;
+  }
+  20% {
+    translate: -11px 30px;
+  }
+  30% {
+    translate: -12px 30px;
+  }
+  40% {
+    translate: -13px 30px;
+  }
+  50% {
+    translate: -14px 30px;
+  }
+  60% {
+    translate: -15px 30px;
+  }
+  70% {
+    translate: -14px 30px;
+  }
+  80% {
+    translate: -13px 30px;
+  }
+  90% {
+    translate: -12px 30px;
+  }
+  100% {
+    translate: -11px 30px;
+  }
+}
+@keyframes animateClound3 {
+  0% {
+    translate: 101px -40px;
+  }
+  20% {
+    translate: 102px -40px;
+  }
+  30% {
+    translate: 103px -40px;
+  }
+  40% {
+    translate: 104px -40px;
+  }
+  50% {
+    translate: 105px -40px;
+  }
+  60% {
+    translate: 106px -40px;
+  }
+  70% {
+    translate: 105px -40px;
+  }
+  80% {
+    translate: 104px -40px;
+  }
+  90% {
+    translate: 103px -40px;
+  }
+  100% {
+    translate: 102px -40px;
+  }
+}
+@keyframes animateClound4 {
+  0% {
+    translate: 400px -50px;
+  }
+  20% {
+    translate: 401px -50px;
+  }
+  30% {
+    translate: 402px -50px;
+  }
+  40% {
+    translate: 403px -50px;
+  }
+  50% {
+    translate: 404px -50px;
+  }
+  60% {
+    translate: 405px -50px;
+  }
+  70% {
+    translate: 404px -50px;
+  }
+  80% {
+    translate: 403px -50px;
+  }
+  90% {
+    translate: 402px -50px;
+  }
+  100% {
+    translate: 401px -50px;
+  }
+}
+@keyframes animateClound5 {
+  0% {
+    translate: 500px 100px;
+  }
+  20% {
+    translate: 501px 100px;
+  }
+  30% {
+    translate: 502px 100px;
+  }
+  40% {
+    translate: 503px 100px;
+  }
+  50% {
+    translate: 504px 100px;
+  }
+  60% {
+    translate: 505px 100px;
+  }
+  70% {
+    translate: 504px 100px;
+  }
+  80% {
+    translate: 503px 100px;
+  }
+  90% {
+    translate: 502px 100px;
+  }
+  100% {
+    translate: 501px 100px;
+  }
+}
+
+.bg-Hgbeauty {
+  background-image: url("images/bg_sectionInfor.jpg");
+  background-size: cover;
+  position: absolute;
+  border-radius: 10px;
+  bottom: 0;
+}
+#motionPath {
+  overflow: visible;
+  height: 100%;
+  max-width: 100%;
+}
+
+#motionPath path {
+  stroke-width: 2;
+  stroke: gray;
+}
+
+#motionPath .astronaut {
+  visibility: hidden;
+}
+.timeTraverl ::after {
+  content: ".";
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  width: 15.75rem !important;
+  border-radius: 10px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.menu-item {
+  background-size: 100%;
+  transition: background-size 0.5s ease;
+}
+.menu-item:hover {
+  background-size: 120%;
+}
+.menu-money {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+.menu-item:hover > .menu-money {
+  transform: translateY(30px);
+  opacity: 0;
+}
+.menu-info {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+.menu-item:hover > .menu-info{
+  transform: translateY(20px);
+  opacity: 0;
+}
+.menu-desc {
+  transition: all 0.5s ease-in-out;
+}
+.menu-item:hover > .menu-desc{
+  transform: translateY(30px);
+}
