@@ -1,4 +1,3 @@
-// import React from 'react'
 import ArrowRight1 from "@/assets/icons/ArrowRight1";
 import CheckIcon from "@/assets/icons/CheckIcon";
 import ScrollAnimation from "@/components/ScrollAnimation";
