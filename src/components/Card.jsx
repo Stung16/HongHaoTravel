@@ -4,7 +4,7 @@ const Card = () => {
       <h4 className="menu-money text-left text-2xl not-italic font-extrabold leading-[120%]">
         $199
       </h4>
-      <p className="menu-desc text-sm not-italic font-extrabold leading-[120%] tracking-[0.00875rem]">
+      <p className="menu-desc text-sm not-italic text-left font-extrabold leading-[120%] tracking-[0.00875rem]">
         Ha Giang Loop tour: Itinerary in 4 Days 5 Nights
       </p>
       <div className="menu-info  flex gap-[0.31rem] items-center">

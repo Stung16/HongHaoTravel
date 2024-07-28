@@ -115,19 +115,19 @@ const Banner = () => {
       ></div>
       <div
         ref={mapRef}
-        className="bg-[url('/images/map.png')] absolute bg-transparent right-0 w-[17.5rem] h-[23.625rem] bg-cover bg-no-repeat"
+        className="bg-[url('/images/map.png')] hidden lg:block absolute bg-transparent right-0 w-[17.5rem] h-[23.625rem] bg-cover bg-no-repeat"
       >
         <img
           ref={locationRef}
           src="/images/location.svg"
-          className="absolute top-1/2 left-1/2"
+          className="absolute top-1/2 left-1/2 hidden lg:block"
           alt=""
         />
       </div>
 
       {/* Sell alert */}
       <div className="fixed z-[1] w-2/3  bottom-8 right-1/2 translate-x-1/2 overflow-hidden hidden xl:block">
-        <div className="bg-white w-full h-full px-8 py-5 rounded-[8px] flex justify-between gap-10">
+        <div className="bg-white w-full h-full px-8 py-3 rounded-[8px] flex justify-between gap-10">
           <div className="flex-1 flex items-center justify-between gap-8">
             <BoxItemSell name={"DAYS"} content={"5 days 4 night"} />
             <BoxItemSell name={"TYPE OF TOUR"} content={"Best Budget"} />
@@ -139,7 +139,7 @@ const Banner = () => {
             />
           </div>
           <div className="bg-main rounded-[8px]">
-            <button className="flex flex-col items-center px-6 py-3 text-white gap-1">
+            <button className="flex flex-col items-center px-6 py-1 text-white ">
               <span className="text-white text-center text-[1.75rem] not-italic font-extrabold">
                 $299
               </span>
