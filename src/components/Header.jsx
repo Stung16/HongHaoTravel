@@ -59,9 +59,8 @@ const Header = ({ isHeaderActive }) => {
                   className={`itemMenu overflow-hidden h-10 flex-col justify-start !items-start  ${
                     active && "h-36"
                   }`}
-                  onClick={() => setActive(!active)}
                 >
-                  <div className="flex items-center flex-col">
+                  <div className="flex items-center flex-col" onClick={() => setActive(!active)}>
                     <ArrowRight
                       cl={"left-0 translate-y-[15px]"}
                       active={active}
@@ -86,23 +85,23 @@ const Header = ({ isHeaderActive }) => {
                       )}
                     </a>
                   </div>
-                    <div>
-                      <ul
-                        className={`cursor-pointer ${
-                          active ? "h-full" : 'h-0'
-                        } flex flex-col gap-2 ml-5`}
-                      >
-                        <li className="itemMenu w-full text-xl text-white not-italic font-medium leading-[120%]">
-                          Best Budget
-                        </li>
-                        <li className="itemMenu w-full opacity-70 text-xl text-white not-italic font-medium leading-[120%]">
-                          Standard
-                        </li>
-                        <li className="itemMenu w-full opacity-70 text-xl text-white not-italic font-medium leading-[120%]">
-                          Premium
-                        </li>
-                      </ul>
-                    </div>
+                  <div>
+                    <ul
+                      className={`cursor-pointer ${
+                        active ? "h-full" : "h-0"
+                      } flex flex-col gap-2 ml-5`}
+                    >
+                      <li className="itemMenu w-full text-xl text-white not-italic font-medium leading-[120%]">
+                        Best Budget
+                      </li>
+                      <li className="itemMenu w-full opacity-70 text-xl text-white not-italic font-medium leading-[120%]">
+                        Standard
+                      </li>
+                      <li className="itemMenu w-full opacity-70 text-xl text-white not-italic font-medium leading-[120%]">
+                        Premium
+                      </li>
+                    </ul>
+                  </div>
                 </li>
                 <li className="itemMenu">
                   <div className="flex items-center">
