@@ -20,6 +20,7 @@ const Banner = () => {
         y: 700,
       },
       {
+        delay: 1,
         opacity: 1,
         y: 0,
         duration: 2,
